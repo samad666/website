@@ -1,0 +1,63 @@
+---
+const navLinks = [
+  { href: "#menu", text: "Menu" },
+  { href: "#about", text: "About" },
+  { href: "#contact", text: "Contact" }
+];
+---
+
+<nav class="main-nav">
+  <div class="nav-content">
+    <a href="/" class="logo">Life of Pie</a>
+    <div class="nav-links">
+      {navLinks.map(link => (
+        <a href={link.href}>{link.text}</a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<style>
+  .main-nav {
+    background-color: var(--primary);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    color: var(--background);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .nav-links a {
+    color: var(--background);
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--secondary);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links a {
+      margin-left: 1rem;
+    }
+  }
+</style>

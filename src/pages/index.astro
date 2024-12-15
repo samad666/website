@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import MenuSection from '../components/MenuSection.astro';
+import { menuCategories } from '../data/menuData';
+---
+
+<Layout title="Life of Pie - Artisan Bakery">
+  <Navigation />
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Life of Pie</h1>
+        <p>Where every bite tells a story</p>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2>Welcome to Life of Pie</h2>
+        <p>At Life of Pie, we believe in creating moments of joy through our freshly baked goods. Each recipe is crafted with love and attention to detail, using only the finest ingredients to ensure every bite is memorable.</p>
+      </div>
+    </section>
+
+    <section id="menu" class="menu">
+      <div class="container">
+        <h2>Our Menu</h2>
+        {menuCategories.map(category => (
+          <MenuSection category={category} />
+        ))}
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Visit Us</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>Owner: Abdul Samad</p>
+            <p>Email: abdulsamad@official666@gmail.com</p>
+           <p>Phone: +91 1234-567-890</p>
+           <p>Address: Konni , Pathanamthitta, 689693</p>
+          </div>
+          <div class="hours">
+            <h3>Hours of Operation</h3>
+            <p>Monday - Friday: 7am - 7pm</p>
+            <p>Saturday: 8am - 6pm</p>
+            <p>Sunday: 8am - 4pm</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    margin-top: 4rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .hero {
+    height: 80vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+
+  section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--primary);
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 3rem;
+    }
+
+    .contact-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

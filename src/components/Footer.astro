@@ -1,0 +1,54 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-info">
+      <h3>Life of Pie</h3>
+      <p>Crafting moments of joy, one bite at a time.</p>
+      <p>Owner: Abdul Samad</p>
+      <p>Email: abdulsamad@official666@gmail.com</p>
+    </div>
+    <div class="footer-hours">
+      <h3>Hours</h3>
+      <p>Monday - Friday: 7am - 7pm</p>
+      <p>Saturday: 8am - 6pm</p>
+      <p>Sunday: 8am - 4pm</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {currentYear} Life of Pie. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--primary);
+    color: var(--background);
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
